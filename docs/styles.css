@@ -1,0 +1,278 @@
+@charset "UTF-8";
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%; }
+
+ul {
+  list-style: none;
+  padding-left: 0; }
+
+button {
+  outline: none !important; }
+
+::-webkit-scrollbar {
+  width: 0.5rem; }
+
+::-webkit-scrollbar-button {
+  background: #ddd; }
+
+::-webkit-scrollbar-track-piece {
+  background: #fff; }
+
+::-webkit-scrollbar-thumb {
+  background: #eee; }
+
+.modal-footer {
+  padding: 0;
+  border-top: 0;
+  display: -ms-flexbox;
+  display: flex; }
+  .modal-footer .btn + .btn {
+    margin-left: 0;
+    border-left: 0; }
+  .modal-footer > .btn {
+    -ms-flex: 1;
+        flex: 1;
+    border-radius: 0;
+    padding: 8px 12px; }
+  .modal-footer > .btn:only-child {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px; }
+  .modal-footer > .btn:first-child {
+    border-bottom-left-radius: 3px; }
+  .modal-footer > .btn:last-child {
+    background-color: #795548;
+    border-color: #795548;
+    color: #fff;
+    border-bottom-right-radius: 3px; }
+
+.modal-content {
+  border-radius: 3px; }
+
+.modal-header, .modal-body {
+  padding: 10px;
+  padding-bottom: 15px;
+  text-align: center; }
+  .modal-header h5, .modal-body h5 {
+    margin-top: 5px;
+    margin-bottom: 15px; }
+
+/********common class***********/
+.cm-btn-confirm {
+  background-color: #795548;
+  border-color: #795548;
+  color: #fff; }
+
+.cm-text-center {
+  text-align: center; }
+
+.cm-text-indent {
+  text-indent: 20px; }
+
+.cm-overflow {
+  overflow-y: scroll;
+  overflow-x: hidden; }
+
+.cm-gold {
+  color: gold; }
+
+.cm-white {
+  color: #fff; }
+
+.cm-bg-light-green {
+  background-color: #8ebc07 !important; }
+
+.cm-bg-light-blue {
+  background-color: #4db798 !important; }
+
+.cm-bg-orange {
+  background-color: #ff9800 !important; }
+
+.cm-bg-red {
+  background-color: #e91e63 !important; }
+
+/*************main*************/
+#root {
+  background-color: #ddd; }
+
+.cm-main {
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  background: linear-gradient(to bottom right, #0c0115, #E91E63);
+  color: #fff;
+  padding: 0; }
+
+.cm-dialog {
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
+  .cm-dialog .modal-dialog {
+    width: 80%; }
+
+.cm-content {
+  -ms-flex: 1;
+      flex: 1;
+  padding: 1rem;
+  overflow: auto !important;
+  /* winphone8和android4+ */
+  -webkit-overflow-scrolling: touch !important;
+  /* ios5+ */ }
+
+@media screen and (min-width: 768px) {
+  .cm-main {
+    -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse; }
+    .cm-main .cm-header {
+      width: 14rem; }
+    .cm-main .cm-content {
+      -ms-flex-align: start !important;
+          align-items: flex-start !important; }
+    .cm-main .cm-footer {
+      width: 6rem;
+      border-top: 0;
+      border-right: 1px solid; }
+      .cm-main .cm-footer .cm-btm-nav {
+        width: 6rem;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+        .cm-main .cm-footer .cm-btm-nav li {
+          margin: 1rem 0; } }
+
+@media screen and (max-width: 768px) {
+  .cm-content {
+    width: 100%; }
+  .cm-bread-crumb {
+    -ms-flex-direction: row !important;
+        flex-direction: row !important; } }
+
+#layout {
+  overflow: hidden; }
+
+@keyframes cm-bounce {
+  0% {
+    opacity: 0;
+    transform: translateX(100px); }
+  60% {
+    opacity: 1;
+    transform: translateX(-30px); }
+  80% {
+    transform: translateX(10px); }
+  100% {
+    transform: translateX(0); } }
+
+.new {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  animation: cm-bounce 1s;
+  animation-fill-mode: forwards; }
+.cj-home.cm-content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+.cm-footer {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 100%;
+  border-top: solid 1px #dedede; }
+  .cm-footer .cm-active {
+    color: #00bcd4; }
+  .cm-footer .cm-btm-nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    height: 5rem;
+    max-width: 768px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 1.2; }
+    .cm-footer .cm-btm-nav li {
+      -ms-flex: 1;
+          flex: 1;
+      list-style: none; }
+    .cm-footer .cm-btm-nav .cm-btm-icon {
+      font-size: 2.3rem; }
+.cm-header {
+  padding: 1rem;
+  padding-bottom: 0; }
+  .cm-header .cm-active {
+    color: #00bcd4; }
+  .cm-header .cm-back {
+    position: relative;
+    top: 2px; }
+  .cm-header .cm-bread-crumb {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    margin: 0;
+    padding: 8px; }
+.cj-demo {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+  .cj-demo textarea {
+    width: 100%;
+    height: 200px; }
+.cm-loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  z-index: 10000;
+  background-color: #000;
+  opacity: 0.7;
+  background-size: cover; }
+  .cm-loader .cm-loading {
+    font-size: 3rem;
+    animation: rotate 1s linear infinite; }
+  .cm-loader .cm-loader-left {
+    transform: translate(50%); }
+
+@keyframes rotate {
+  from {
+    transform: rotate(0); }
+  to {
+    transform: rotate(360deg); } }
+
+@keyframes rotate-reverse {
+  from {
+    transform: rotate(360deg); }
+  to {
+    transform: rotate(0deg); } }
+
+.loader-new {
+  transition: all 1s;
+  transform: translate(-100%); }
+
+.loading {
+  transform: translate(0); }
+  .loading .cm-loading {
+    font-size: 3rem;
+    color: #ff8111;
+    animation: rotate-reverse 1s linear infinite; }

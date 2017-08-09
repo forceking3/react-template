@@ -1,0 +1,25 @@
+@import "../../scss/mixins";
+.cm-footer{
+  flex-shrink: 0;
+  width: 100%;
+  border-top:solid 1px #dedede;
+  .cm-active{
+    color:$blue;
+  }
+  .cm-btm-nav{
+    display: flex;
+    align-items: center;
+    height:5rem;
+    max-width:768px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 1.2;
+    li{
+      flex: 1;
+      list-style: none;
+    }
+    .cm-btm-icon{
+      font-size: 2.3rem;
+    }
+  }
+}

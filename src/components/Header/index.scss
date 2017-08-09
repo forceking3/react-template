@@ -1,0 +1,18 @@
+@import "../../scss/mixins";
+.cm-header{
+  padding:1rem;
+  padding-bottom: 0;
+  .cm-active{
+    color:$blue;
+  }
+  .cm-back{
+    position:relative;
+    top:2px;
+  }
+  .cm-bread-crumb{
+    display: flex;
+    flex-direction: column;
+    margin:0;
+    padding:8px;
+  }
+}

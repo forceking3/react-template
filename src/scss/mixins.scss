@@ -1,0 +1,48 @@
+@import "config";
+@mixin circle($radius:3rem){
+  width: $radius;
+  height:$radius;
+  border-radius:50%;
+  overflow: hidden;
+}
+@mixin overflow(){
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+@mixin largeScreen(){
+  @media screen and (min-width:$minScreen){
+    .cm-main{
+      flex-direction: row-reverse;
+      .cm-header{
+        width: 14rem;
+      }
+      .cm-content{
+        align-items: flex-start !important;
+      }
+      .cm-footer{
+        width: 6rem;
+        border-top:0;
+        border-right: 1px solid;
+        .cm-btm-nav{
+          width: 6rem;
+          flex-direction: column;
+          li{
+            margin: 1rem 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin smallScreen(){
+  @media screen and (max-width:$minScreen){
+    .cm-content{
+      width: 100%;
+    }
+    .cm-bread-crumb {
+      flex-direction: row !important;
+    }
+  }
+}

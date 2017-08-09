@@ -1,0 +1,130 @@
+@import "mixins";
+html,
+body,
+#root{
+  height: 100%;
+  width:100%;
+}
+ul{
+  list-style: none;
+  padding-left:0;
+}
+button{
+  outline: none !important;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+::-webkit-scrollbar-button {
+  background: #ddd;
+}
+::-webkit-scrollbar-track-piece {
+  background: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background: #eee;
+}
+
+.modal-footer{
+  padding:0;
+  border-top:0;
+  display: flex;
+  .btn+.btn{
+    margin-left:0;
+    border-left:0;
+  }
+  >.btn{
+    flex:1;
+    border-radius:0;
+    padding:8px 12px;
+  }
+  >.btn:only-child{
+    border-bottom-left-radius:3px;
+    border-bottom-right-radius:3px;
+  }
+  >.btn:first-child{
+    border-bottom-left-radius:3px;
+  }
+  >.btn:last-child{
+    background-color:#795548;
+    border-color: #795548;
+    color:$white;
+    border-bottom-right-radius:3px;
+  }
+}
+.modal-content{
+  border-radius: 3px;
+}
+.modal-header,.modal-body{
+  padding:10px;
+  padding-bottom:15px;
+  text-align: center;
+  h5{
+    margin-top:5px;
+    margin-bottom: 15px;
+  }
+}
+
+/********common class***********/
+.cm-btn-confirm{
+  background-color:#795548;
+  border-color: #795548;
+  color:$white;
+}
+.cm-text-center{
+  text-align: center;
+}
+.cm-text-indent{
+  text-indent:20px;
+}
+.cm-overflow{
+  @include overflow;
+}
+.cm-gold{
+  color:$gold;
+}
+.cm-white{
+  color:$white;
+}
+.cm-bg-light-green{
+  background-color:$light-green !important;
+}
+.cm-bg-light-blue{
+  background-color:$light-blue !important;
+}
+.cm-bg-orange{
+  background-color:$orange !important;
+}
+.cm-bg-red{
+  background-color: $red !important;
+}
+/*************main*************/
+#root{
+  background-color: #ddd;
+}
+.cm-main{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background:linear-gradient(to bottom right,#0c0115, #E91E63);
+  color:#fff;
+  padding:0;
+}
+.cm-dialog{
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  .modal-dialog{
+    width:80%;
+  }
+}
+
+.cm-content{
+  flex: 1;
+  padding:1rem;
+  overflow:auto !important;/* winphone8和android4+ */
+  -webkit-overflow-scrolling: touch !important; /* ios5+ */
+}
+@include largeScreen;
+@include smallScreen;
