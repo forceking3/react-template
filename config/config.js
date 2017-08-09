@@ -1,6 +1,6 @@
 let config = {
     env:process.env.NODE_ENV||'development',
-	other:'hello World!'
+	baseName:'/react-template'
 };
 module.exports=config;
 

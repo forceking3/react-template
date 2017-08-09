@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "rimraf docs",
     "start": "set NODE_ENV=development&&webpack-dev-server --config config/webpack.config.js --progress",
-    "compile": "npm run clean&&set NODE_ENV=production&&webpack --config config/webpack.config.js --progress"
+    "build": "npm run clean&&set NODE_ENV=production&&webpack --config config/webpack.config.js --progress"
   },
   "dependencies": {
     "babel-core": "^6.25.0",

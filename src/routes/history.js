@@ -6,6 +6,7 @@
 // export const browserHistory=useRouterHistory(createHistory)({basename:"/"});
 import { browserHistory } from 'react-router'
 import { useBasename } from 'history'
+import config from '../../config/config'
 
-const history = useBasename(() => browserHistory)({ basename: '/' })
+const history = useBasename(() => browserHistory)({ basename:config.baseName })
 export default history;

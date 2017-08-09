@@ -9,7 +9,7 @@ const prefix=require('autoprefixer');
 const config=require('./config');
 const env=config.env;
 const entry=path.resolve('', "./index.js");
-const publicPath='';
+const publicPath=config.baseName;
 
 let webpackConfig= {
     entry: {
