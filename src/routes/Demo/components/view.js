@@ -10,7 +10,10 @@ export default class Demo extends Component{
 		this.getMovieList=this.getMovieList.bind(this);
 	}
 	getMovieList(){
-		this.props.actions.getData();
+		this.props.actions.getData(this.formatterData);
+	}
+	formatterData(data){
+		console.log('data',data);
 	}
 	render(){
 		const path=[{name:'Home',path:'/'},{name:'Demo',path:'/demo',active:true}];

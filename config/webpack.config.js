@@ -57,7 +57,7 @@ let webpackConfig= {
                     },"sass-loader"]
                 })
             },{
-                test: /\.(png|jpg|gif)$/,
+                test: /\.(png|jpg|gif|svg)$/,
                 loader: 'url-loader?limit=8192&name=images/[name].[ext]'//8192B,8KB
             },{
                 test: /\.(mp3)$/,
@@ -65,6 +65,9 @@ let webpackConfig= {
             }
         ]
     },
+	resolve: {
+		extensions: ['.js', '.jsx','.scss']
+	},
     devServer: {
         port:612,
         hot:true,
@@ -80,7 +83,7 @@ webpackConfig.plugins=[
     new ExtractTextPlugin({filename:"styles.css",allChunks:true}),
     //提取通用js文件，缺省chunks参数将会把入口entry中的通用文件提取到vendor中
     new HtmlWebpackPlugin({
-        template :path.resolve('',"index.html"),
+        template :path.resolve('',"./src/index.html"),
         hash     : false,
         filename :"index.html",
         inject   : 'body'

@@ -60,6 +60,9 @@ class Home extends Component{
 						<Button onClick={this.showDialog}>
 							Dialog
 						</Button>
+						<Button onClick={()=>browserHistory.push('/image')}>
+							Image
+						</Button>
 					</ButtonGroup>
 				</section>
 				<Footer/>
