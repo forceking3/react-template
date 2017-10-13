@@ -26,7 +26,8 @@ export default class View extends Component {
 	previewImg(index){
 		const pswpElement=this.pswp;
 		const options = {
-			index
+			index,
+			maxSpreadZoom:2.5
 		};
 		const gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, this.list, options);
 		gallery.init();
