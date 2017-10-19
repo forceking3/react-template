@@ -2,11 +2,32 @@ import React, {Component} from 'react';
 import 'photoswipe/dist/photoswipe.css';
 import 'photoswipe/dist/default-skin/default-skin.css';
 import PhotoSwipe from 'photoswipe';
-import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default'
+import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default';
+import PropTypes from 'prop-types';
+/**
+ image previewer
+ @install:
+ npm install --save-dev photoswipe
+
+ @use:
+
+ import PhotoSwipe from 'photoSwipe.jsx';
+ render(){
+	return (
+	   <div>
+	       <PhotoSwipe selector="#imageList" />
+	       <div id="#imageList">
+	           <img src='thumbnail.jpg' data-original-src='original.jpg' />
+	           <img src='thumbnail2.jpg' data-original-src='original2.jpg' />
+	       </div>
+	   </div>
+	);
+ }
+ */
 export default class View extends Component {
-	constructor(props) {
-		super(props);
-	}
+	static propTypes={
+		selector:PropTypes.string
+	};
 	componentDidMount(){
 		this.initPreviewer();
 	}
@@ -15,10 +36,15 @@ export default class View extends Component {
 		const imgs=document.querySelectorAll(selector+" img");
 		let list=[];
 		Array.prototype.map.call(imgs,(v,i)=>{
-			list.push({});//为了防止图片加载先后顺序，先push空值，再修改
-			v.onload=()=>{
-				list[i]={src:v.src,w:v.width,h:v.height};
-				v.onclick=this.previewImg.bind(this,i);
+			list.push({});
+			v.onclick=this.previewImg.bind(this,i);
+			const original=v.getAttribute('data-original-src');
+			if(original) {
+				list[i] = {src:original, w:0, h:0};
+			}else{
+				v.onload = () => {
+					list[i] = {src: v.src, w: v.width, h: v.height};
+				};
 			}
 		});
 		this.list=list;
@@ -30,6 +56,17 @@ export default class View extends Component {
 			maxSpreadZoom:2.5
 		};
 		const gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, this.list, options);
+		gallery.listen('gettingData',(index,item)=>{
+			if(item.h===0||item.w===0){
+				const img=new Image();
+				img.src=item.src;
+				img.onload=function(){
+					item.w=this.width;
+					item.h=this.height;
+					gallery.updateSize(true);
+				}
+			}
+		});
 		gallery.init();
 	}
 

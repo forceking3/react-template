@@ -18,8 +18,8 @@ export default class View extends Component{
 				</Header>
 				<section className="cm-content cj-image container">
 					<div id="imgCont" className="cj-img-cont">
-						<img src={require('../../../assets/img/1 (1).jpg')} />
-						<img src={require('../../../assets/img/1 (2).jpg')} />
+						<img src={require('../../../assets/img/1 (1).jpg')} data-original-src={require('../../../assets/img/1 (5).jpg')} />
+						<img src={require('../../../assets/img/1 (2).jpg')} data-original-src={require('../../../assets/img/1 (6).jpg')}/>
 						<img src={require('../../../assets/img/1 (3).jpg')} />
 						<img src={require('../../../assets/img/1 (4).jpg')} />
 					</div>
