@@ -1,5 +1,6 @@
 react-template
 ========
+[Changelog](CHANGELOG.md)
 ### stacks
 * react
 * redux
