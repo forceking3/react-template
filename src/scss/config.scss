@@ -1,8 +1,7 @@
-//$html-font-size:16;
-//@function rem($px,$html-font-size:$html-font-size){
-//  @return $px*1rem;
-//}
+/****screen size****/
 $minScreen:768px;
+
+/****color****/
 $white:#fff;
 $orange:#ff9800;
 $red:#e91e63;
@@ -11,3 +10,20 @@ $purple:purple;
 $gold:rgb(255,215,0);
 $light-green: #8ebc07;
 $light-blue:#4db798;
+$grey:#505050;
+$green:green;
+
+$map-color:(
+        (color:blue,value:$blue),
+        (color:red,value:$red),
+        (color:grey,value:$grey),
+        (color:white,value:$white),
+        (color:green,value:$green),
+        (color:purple,value:$purple),
+);
+
+/****font-size****/
+$font-md:16px;
+$font-lg:18px;
+$font-sm:14px;
+$font-xs:12px;

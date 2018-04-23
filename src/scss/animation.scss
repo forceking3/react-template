@@ -1,0 +1,20 @@
+@keyframes storm {
+  0%{ transform: rotate(0) scale(2);  }
+  50%{  transform: rotate(360deg) scale(2);  }
+  100%{  transform: rotate(360deg) scale(1);  }
+}
+
+@keyframes rotate {
+  from{transform:rotate(0);}
+  to{transform: rotate(-360deg)}
+}
+
+@keyframes rotate-reverse {
+  from{transform:rotate(-360deg);}
+  to{transform: rotate(0deg)}
+}
+
+@keyframes switch {
+  from{  transform: scaleX(0);  }
+  to{  transform: scaleX(1);  }
+}

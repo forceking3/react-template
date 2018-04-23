@@ -81,24 +81,6 @@ button{
 .cm-overflow{
   @include overflow;
 }
-.cm-gold{
-  color:$gold;
-}
-.cm-white{
-  color:$white;
-}
-.cm-bg-light-green{
-  background-color:$light-green !important;
-}
-.cm-bg-light-blue{
-  background-color:$light-blue !important;
-}
-.cm-bg-orange{
-  background-color:$orange !important;
-}
-.cm-bg-red{
-  background-color: $red !important;
-}
 /*************main*************/
 #root{
   background-color: #ddd;
@@ -119,12 +101,13 @@ button{
     width:80%;
   }
 }
-
 .cm-content{
   flex: 1;
   padding:1rem;
   overflow:auto !important;/* winphone8和android4+ */
   -webkit-overflow-scrolling: touch !important; /* ios5+ */
 }
-@include largeScreen;
-@include smallScreen;
+
+@include generateColorClasses;
+@include largeScreenInit;
+@include smallScreenInit;

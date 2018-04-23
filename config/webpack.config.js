@@ -10,6 +10,7 @@ const config=require('./config');
 const env=config.env;
 const entry=path.resolve('', "./index.js");
 const publicPath=config.baseName;
+const bootstrap='./src/assets/bootstrap/';
 
 let webpackConfig= {
     entry: {
@@ -60,6 +61,9 @@ let webpackConfig= {
                 test: /\.(png|jpg|gif|svg)$/,
                 loader: 'url-loader?limit=8192&name=images/[name].[ext]'//8192B,8KB
             },{
+                test: /\.(eot|ttf|woff|woff2)$/,
+                loader: 'url-loader?limit=8192&name=assets/fonts/[name].[ext]'//8192B,8KB
+            },{
                 test: /\.(mp3)$/,
                 loader: 'url-loader?limit=8192&name=music/[name].[ext]'
             }
@@ -69,7 +73,7 @@ let webpackConfig= {
 		extensions: ['.js', '.jsx','.scss']
 	},
     devServer: {
-        port:612,
+        port:config.port,
         hot:true,
         historyApiFallback:{index:publicPath},//跳转到指定路径
         inline: true//实时刷新
@@ -85,11 +89,14 @@ webpackConfig.plugins=[
     new HtmlWebpackPlugin({
         template :path.resolve('',"./src/index.html"),
         hash     : false,
+        favicon  :path.resolve('',"./src/favicon.ico"),
         filename :"index.html",
         inject   : 'body'
     }),
     new webpack.optimize.CommonsChunkPlugin({
-        names : ['js/vendor']
+        names : [
+            'js/vendor'
+        ]
     })
 ];
 //按环境加载插件

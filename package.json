@@ -6,11 +6,12 @@
     "clean": "rimraf docs",
     "start": "set NODE_ENV=development&&webpack-dev-server --config config/webpack.config.js --progress",
     "build": "npm run clean&&set NODE_ENV=production&&webpack --config config/webpack.config.js --progress",
-    "changelog":"conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
     "babel-core": "^6.25.0",
     "babel-polyfill": "^6.16.0",
+    "bootstrap": "^3.3.7",
     "debug": "^2.6.8",
     "es6-promise": "^4.1.0",
     "history": "^3.2.1",

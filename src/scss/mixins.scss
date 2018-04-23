@@ -1,17 +1,43 @@
 @import "config";
+@import "animation";
+@mixin generateColorClasses{
+  @for $i from 1 through length($map-color){
+    $item:nth($map-color,$i);
+    $color:map-get($item,color);
+    $value:map-get($item,value);
+    .cm-#{$color}{
+      color:$value;
+    }
+    .cm-bg-#{$color}{
+      background-color:$value;
+    }
+  }
+}
+
 @mixin circle($radius:3rem){
   width: $radius;
   height:$radius;
   border-radius:50%;
   overflow: hidden;
 }
-@mixin overflow(){
+@mixin overflow() {
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
 @mixin largeScreen(){
   @media screen and (min-width:$minScreen){
+    @content
+  }
+}
+@mixin smallScreen(){
+  @media screen and (max-width:$minScreen){
+    @content
+  }
+}
+
+@mixin largeScreenInit(){
+  @include largeScreen{
     .cm-main{
       flex-direction: row-reverse;
       .cm-header{
@@ -36,8 +62,8 @@
   }
 }
 
-@mixin smallScreen(){
-  @media screen and (max-width:$minScreen){
+@mixin smallScreenInit(){
+  @include smallScreen{
     .cm-content{
       width: 100%;
     }
@@ -46,3 +72,4 @@
     }
   }
 }
+
