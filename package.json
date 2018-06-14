@@ -1,13 +1,13 @@
 {
   "name": "react-template",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
   "scripts": {
     "clean": "rimraf build",
     "start": "set NODE_ENV=development&&webpack-dev-server --config config/webpack.config.js --progress --open",
     "build": "npm run clean&&set NODE_ENV=production&&webpack --config config/webpack.config.js --progress",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "release":"standard-version"
+    "version": "standard-version"
   },
   "dependencies": {
     "babel-core": "^6.25.0",
