@@ -4,7 +4,7 @@
 import React,{Component} from 'react';
 import {Glyphicon} from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import './index.scss';
+
 export default class Loader extends Component{
     static propTypes={
         show:PropTypes.bool.isRequired

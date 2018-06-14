@@ -1,8 +1,10 @@
 .cj-demo {
-  display: flex;
-  flex-direction: column;
-  textarea{
-    width:100%;
-    height: 200px;
+  .cm-content {
+    display: flex;
+    flex-direction: column;
+    textarea {
+      width: 100%;
+      height: 200px;
+    }
   }
 }

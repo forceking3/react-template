@@ -3,7 +3,7 @@
  */
 import React,{Component} from 'react';
 import {ButtonGroup,Modal,Button,Glyphicon} from 'react-bootstrap';
-import '../index.scss';
+
 import Footer from '../../../components/Footer';
 import Header from '../../../components/Header';
 import browserHistory from '../../history';
@@ -27,7 +27,7 @@ class Home extends Component{
 
 	render(){
 		return (
-			<article className="cm-main container">
+			<article className="cm-main container cj-home">
 				<Header>
 					<h2>Title</h2>
 				</Header>
@@ -51,7 +51,7 @@ class Home extends Component{
 						</Button>
 					</Modal.Footer>
 				</Modal>
-				<section className="cm-content cj-home container">
+				<section className="cm-content">
 					hello world
 					<ButtonGroup>
 						<Button onClick={()=>browserHistory.push('/demo')}>
@@ -64,6 +64,7 @@ class Home extends Component{
 							Image
 						</Button>
 					</ButtonGroup>
+					<img src="static/test.jpg" width="100%" height="150px" />
 				</section>
 				<Footer/>
 			</article>

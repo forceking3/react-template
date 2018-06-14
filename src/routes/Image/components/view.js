@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import '../index.scss';
+
 import Footer from '../../../components/Footer';
 import Header from '../../../components/Header';
 import {InputGroup,FormControl,Button,Glyphicon} from 'react-bootstrap';
@@ -12,11 +12,11 @@ export default class View extends Component{
 		const path=[{name:'Home',path:'/'},{name:'Image',path:'/image',active:true}];
 		const data=this.props.module.data.json;
 		return (
-			<article className="cm-main container">
+			<article className="cm-main container cj-image">
 				<Header path={path}>
 					<h2>Title</h2>
 				</Header>
-				<section className="cm-content cj-image container">
+				<section className="cm-content">
 					<div id="imgCont" className="cj-img-cont">
 						<img src={require('../../../assets/img/1 (1).jpg')} data-original-src={require('../../../assets/img/1 (5).jpg')} />
 						<img src={require('../../../assets/img/1 (2).jpg')} data-original-src={require('../../../assets/img/1 (6).jpg')}/>

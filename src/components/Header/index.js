@@ -5,7 +5,7 @@ import React,{Component} from 'react';
 import PropTypes from 'prop-types';
 import browserHistory from '../../routes/history';
 import {Glyphicon,Breadcrumb} from 'react-bootstrap';
-import './index.scss';
+
 export default class Header extends Component{
 	static propTypes={
 		path:PropTypes.array

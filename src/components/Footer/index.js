@@ -4,7 +4,7 @@
 import React,{Component} from 'react';
 import browserHistory from '../../routes/history';
 import {Glyphicon} from 'react-bootstrap';
-import './index.scss';
+
 export default class Footer extends Component{
     render(){
         const activeIndex=this.props.activeIndex||0;
